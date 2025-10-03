@@ -141,7 +141,7 @@ export default function KridoAutomations() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 px-6 py-6 backdrop-blur-lg bg-black/30 border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 backdrop-blur-lg bg-black/30 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Sparkles className="w-8 h-8 text-purple-400" />
@@ -191,7 +191,7 @@ export default function KridoAutomations() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-6 pt-20 pb-24">
+      <section className="relative z-10 px-6 pt-32 pb-24">
         <div className="max-w-7xl mx-auto text-center">
           {/* Hero Text - Centered */}
           <div className="max-w-4xl mx-auto mb-16">
@@ -240,19 +240,19 @@ export default function KridoAutomations() {
             <p className="text-lg text-gray-400">From simple tasks to complex AI workflows, we've got you covered</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             {services.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setActiveCard(index)}
                 onMouseLeave={() => setActiveCard(null)}
-                className={`group relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl transition-all duration-500 cursor-pointer ${
+                className={`group relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl transition-all duration-500 cursor-pointer w-full ${
                   activeCard === index ? 'scale-105 bg-white/10 shadow-2xl shadow-purple-500/20' : ''
                 } ${index === 3 ? 'md:col-start-1 lg:col-start-2' : ''} ${index === 4 ? 'md:col-start-2 lg:col-start-3' : ''}`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
 
-                <div className="relative">
+                <div className="relative text-center">
                   <div className={`inline-flex p-4 bg-gradient-to-br ${service.gradient} rounded-2xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     {service.icon}
                   </div>
@@ -308,9 +308,8 @@ export default function KridoAutomations() {
                     </div>
                   ) : (
                     <div className="p-8 md:p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl text-center">
-                      <div className="text-6xl text-purple-400 mb-6">"</div>
                       <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-8 max-w-3xl mx-auto">
-                        {testimonial.content}
+                        "{testimonial.content}"
                       </p>
                       <div className="border-t border-white/20 pt-6">
                         <p className="text-xl font-semibold text-white mb-1">{testimonial.author}</p>
