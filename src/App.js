@@ -22,32 +22,38 @@ export default function KridoAutomations() {
     {
       icon: <Mail className="w-10 h-10" />,
       title: "Email Automation",
-      description: "Automate email campaigns, follow-ups, and customer communications. Smart sequences that convert.",
+      description: "Smart email campaigns and follow-ups that convert leads automatically.",
       gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: <Workflow className="w-10 h-10" />,
       title: "Workflow Automation",
-      description: "Streamline business processes from data entry to complex multi-step operations across all your tools.",
+      description: "Streamline repetitive tasks from data entry to multi-step operations.",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
       title: "SEO & Marketing",
-      description: "Automate content distribution, social media posting, analytics reporting, and marketing workflows.",
+      description: "Automated content distribution, social posting, and analytics reporting.",
       gradient: "from-orange-500 to-red-500"
     },
     {
       icon: <Bot className="w-10 h-10" />,
       title: "Custom AI Agents",
-      description: "Fine-tuned AI agents trained on your data, designed for your specific business needs and workflows.",
+      description: "AI agents trained on your data for your specific business needs.",
       gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: <MessageSquare className="w-10 h-10" />,
       title: "Voice & Chat Bots",
-      description: "Intelligent conversational agents for customer support, lead qualification, and 24/7 engagement.",
+      description: "24/7 conversational agents for support and lead qualification.",
       gradient: "from-violet-500 to-purple-500"
+    },
+    {
+      icon: <Zap className="w-10 h-10" />,
+      title: "Custom Automations",
+      description: "If you're clicking it twice, we can automate it. Any repetitive task, solved.",
+      gradient: "from-yellow-500 to-orange-500"
     }
   ];
 
@@ -240,15 +246,15 @@ export default function KridoAutomations() {
             <p className="text-lg text-gray-400">From simple tasks to complex AI workflows, we've got you covered</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
                 onMouseEnter={() => setActiveCard(index)}
                 onMouseLeave={() => setActiveCard(null)}
-                className={`group relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl transition-all duration-500 cursor-pointer w-full ${
+                className={`group relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl transition-all duration-500 cursor-pointer ${
                   activeCard === index ? 'scale-105 bg-white/10 shadow-2xl shadow-purple-500/20' : ''
-                } ${index === 3 ? 'md:col-start-1 lg:col-start-2' : ''} ${index === 4 ? 'md:col-start-2 lg:col-start-3' : ''}`}
+                }`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
 
