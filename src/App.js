@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Mail, TrendingUp, Workflow, Bot, MessageSquare, ArrowRight, Sparkles, Send, User, AtSign, Menu, X } from 'lucide-react';
+import { Zap, Mail, TrendingUp, Workflow, Bot, MessageSquare, Sparkles, Send, User, AtSign, Menu, X } from 'lucide-react';
 
 export default function KridoAutomations() {
-  const [scrollY, setScrollY] = useState(0);
   const [activeCard, setActiveCard] = useState(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,12 +10,6 @@ export default function KridoAutomations() {
     email: '',
     automation: ''
   });
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -108,7 +101,7 @@ export default function KridoAutomations() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY_HERE',
+          access_key: '6246a59b-ac1a-4ea4-9118-92b7c68c03c5',
           name: formData.name,
           email: formData.email,
           message: formData.automation || 'No automation details provided',
